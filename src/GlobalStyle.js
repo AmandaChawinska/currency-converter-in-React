@@ -15,5 +15,6 @@ export const GlobalStyle = createGlobalStyle `
     font-family: "Lato", sans-serif;
     background-image: url("${background}");
     background-size: cover;
+    min-height: 100vh;
     }
 `;
