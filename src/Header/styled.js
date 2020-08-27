@@ -7,4 +7,5 @@ export const StyledHeader = styled.header `
     padding: 20px 0;
     font-weight: unset;
     font-size: 30px;
+    margin-bottom: 40px;
 `;
