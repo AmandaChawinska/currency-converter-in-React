@@ -4,4 +4,7 @@ export const Wrapper = styled.div `
     text-align: right;
     font-family: monospace;
     color: ${({ theme }) => theme.color.black};
+    font-weight: bold;
+    padding: 10px;
+    font-size: 15px;
 `;
