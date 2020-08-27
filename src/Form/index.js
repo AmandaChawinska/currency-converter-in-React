@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Result from "./Result";
+import { Clock } from '../Clock';
 import {
   StyledFieldset,
   StyledLegend,
@@ -7,10 +9,10 @@ import {
 } from "./styled";
 
 
-const Form = ({ calculateResult, setResult }) => {
+const Form = ({ calculateResult, setResult, result }) => {
   const [amount, setAmount] = useState("");
-  const [changeFrom, setchangeFrom] = useState("PLN");
-  const [changeOn, setchangeOn] = useState("EUR");
+  const [changeFrom, setChangeFrom] = useState("PLN");
+  const [changeOn, setChangeOn] = useState("EUR");
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -20,15 +22,16 @@ const Form = ({ calculateResult, setResult }) => {
   const onFormReset = (event) => {
     event.preventDefault();
     setAmount("");
-    setchangeFrom("PLN");
-    setchangeOn("EUR");
+    setChangeFrom("PLN");
+    setChangeOn("EUR");
     setResult("");
   };
 
   return (
     <form onSubmit={onFormSubmit} onReset={onFormReset} >
-
+   
       <StyledFieldset>
+      <Clock/>
         <StyledLegend>Wymiana waluty</StyledLegend>
 
         <p>
@@ -52,7 +55,7 @@ const Form = ({ calculateResult, setResult }) => {
             <StyledLabelText>Posiadam walutę:</StyledLabelText>
             <select
               value={changeFrom}
-              onChange={({ target }) => setchangeFrom(target.value)}
+              onChange={({ target }) => setChangeFrom(target.value)}
               required
             >
               <option>PLN</option>
@@ -68,7 +71,7 @@ const Form = ({ calculateResult, setResult }) => {
             <StyledLabelText>Chcę otrzymać:</StyledLabelText>
             <select
               value={changeOn}
-              onChange={({ target }) => setchangeOn(target.value)}
+              onChange={({ target }) => setChangeOn(target.value)}
               required
             >
               <option>PLN</option>
@@ -87,7 +90,8 @@ const Form = ({ calculateResult, setResult }) => {
             Od nowa
           </StyledButton>
         </p>
-        <p className="form__result">Otrzymbvbana kwota: <span className="form__result">N/A</span> </p>
+      
+        <Result result={result}/>
       </StyledFieldset>
 
     </form>
