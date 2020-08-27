@@ -36,7 +36,7 @@ function App() {
           <Result result={result} />
         </div>
 
-        <Footer title="Pole oznaczone * jest obowiązkowe. <br /> 
+        <Footer title="Pole oznaczone * jest obowiązkowe. 
       Kurs walut z dnia 25.06.2020 r."></Footer>
 
       </Container >
