@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Result from "./Result";
 import { Clock } from '../Clock';
+import { currencies } from "../currencies";
 import {
   StyledFieldset,
   StyledLegend,
@@ -38,7 +39,6 @@ const Form = ({ calculateResult, setResult, result }) => {
           <label>
             <StyledLabelText>Wybierz wartość*:</StyledLabelText>
             <input
-             
               type="number"
               name="amount"
               min="0"
@@ -58,10 +58,15 @@ const Form = ({ calculateResult, setResult, result }) => {
               onChange={({ target }) => setChangeFrom(target.value)}
               required
             >
-              <option>PLN</option>
-              <option>USD</option>
-              <option>GBP</option>
-              <option>EUR</option>
+              {currencies.map((changeFrom => (
+                 <option
+                 key={changeFrom.name}
+                 value={changeFrom.name}
+                 >
+                     {changeFrom.name}
+                 </option>
+
+              )))}
 
             </select>
           </label>
@@ -74,10 +79,17 @@ const Form = ({ calculateResult, setResult, result }) => {
               onChange={({ target }) => setChangeOn(target.value)}
               required
             >
-              <option>PLN</option>
-              <option>USD</option>
-              <option>GBP</option>
-              <option>EUR</option>
+              {currencies.map((changeOn => (
+                 <option
+                 key={changeOn.name}
+                 value={changeOn.name}
+                 >
+                     {changeOn.name}
+                 </option>
+
+              )))}
+              
+            
 
             </select>
           </label>
