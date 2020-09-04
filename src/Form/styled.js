@@ -41,3 +41,19 @@ export const StyledButton = styled.button`
     }
 
 `;
+
+export const Loading = styled.p`
+    color:${({ theme }) => theme.color.black};
+    font-size: 50px;
+`;
+
+export const Failure = styled.p`
+    color:${({ theme }) => theme.color.red};
+`;
+
+export const Footer = styled.p`
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+   
+`;
