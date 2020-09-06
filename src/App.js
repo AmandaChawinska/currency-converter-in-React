@@ -11,7 +11,7 @@ function App() {
 
 
   const calculateResult = (changeFrom, changeOn, amount) => {
-    const result = (amount * ratesData.rates[changeFrom]) / ratesData.rates[changeOn];
+    const result = (amount * ratesData.rates[changeOn]) / ratesData.rates[changeFrom];
 
 
     setResult(`${result.toFixed(2)}`);
